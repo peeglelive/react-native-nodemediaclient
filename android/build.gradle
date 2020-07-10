@@ -23,7 +23,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.github.peeglelive:NodemediaClient-AndroidClient:-48593bab7f-1'
+    compile 'com.github.peeglelive:NodemediaClient-AndroidClient:v1.0.1'
     compile 'com.android.support:appcompat-v7:28.0.1'
     compile "com.facebook.react:react-native:+"  // From node_modules
 }
