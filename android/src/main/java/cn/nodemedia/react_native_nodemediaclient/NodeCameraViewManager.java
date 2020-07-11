@@ -135,7 +135,7 @@ public class NodeCameraViewManager extends ViewGroupManager<RCTNodeCameraView> {
                 root.switchCam();
                 break;
             case COMMAND_MIC_ENABLE_ID:
-                root.setAudioEnable(args.getBoolean(0));
+                root.micEnable(args.getBoolean(0));
                 break;
             case COMMAND_SWITCH_FLASH_ID:
                 root.setFlashEnable(args.getBoolean(0));

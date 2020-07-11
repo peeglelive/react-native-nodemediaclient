@@ -120,9 +120,9 @@ public class RCTNodeCameraView extends NodeCameraView implements LifecycleEventL
         return mNodePublisher.switchCamera();
     }
 
-    /* public void micEnable(boolean status) {
-        mNodePublisher.switchCamera();
-    } */
+    public void micEnable(boolean status) {
+        mNodePublisher.setFlashEnable(status);
+    }
 
     public void audioPreview() {
         isAutoPreview = true;
