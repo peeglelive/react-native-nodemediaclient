@@ -101,6 +101,10 @@
   [_np setFlashEnable:flashEnable];
 }
 
+- (void)setMicEnable:(BOOL)micEnable {
+  [_np setAudioEnable:micEnable];
+}
+
 -(int)startprev {
   return [_np startPreview];
 }

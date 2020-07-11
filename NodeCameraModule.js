@@ -40,6 +40,15 @@ class NodeCameraView extends Component {
     );
   }
 
+  micEnable(enable) {
+    UIManager.dispatchViewManagerCommand(
+      findNodeHandle(this.refs[RCT_VIDEO_REF]),
+      UIManager.getViewManagerConfig('RCTNodeCamera').Commands.micEnable,
+      [enable]
+    );
+  }
+
+
   startPreview() {
     UIManager.dispatchViewManagerCommand(
       findNodeHandle(this.refs[RCT_VIDEO_REF]),

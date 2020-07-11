@@ -21,6 +21,7 @@
 @property (nonatomic) RCTDirectEventBlock onStatus;
 
 @property (nonatomic) BOOL flashEnable;
+@property (nonatomic) BOOL micEnable;
 
 -(int)startprev;
 -(int)stopprev;
