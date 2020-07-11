@@ -16,6 +16,7 @@ import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Nullable;
@@ -36,6 +37,8 @@ public class NodeCameraViewManager extends ViewGroupManager<RCTNodeCameraView> {
     private static final String COMMAND_SWITCH_FLASH_NAME = "flashEnable";
     private static final int COMMAND_MIC_ENABLE_ID = 6;
     private static final String COMMAND_MIC_ENABLE_NAME = "micEnable";
+    private static final int COMMAND_VIDEO_ENABLE_ID = 7;
+    private static final String COMMAND_VIDEO_ENABLE_NAME = "videoEnable";
     @Override
     public String getName() {
         return "RCTNodeCamera";
@@ -105,15 +108,26 @@ public class NodeCameraViewManager extends ViewGroupManager<RCTNodeCameraView> {
     @Nullable
     @Override
     public Map<String, Integer> getCommandsMap() {
-        return MapBuilder.of(
+        Map commands = new HashMap<String, Integer>();
+        commands.put(COMMAND_STARTPREV_NAME,COMMAND_STARTPREV_ID);
+        commands.put(COMMAND_STOPPREV_NAME,COMMAND_STOPPREV_ID);
+        commands.put(COMMAND_START_NAME,COMMAND_START_ID);
+        commands.put(COMMAND_STOP_NAME,COMMAND_STOP_ID);
+        commands.put(COMMAND_SWITCH_CAM_NAME,COMMAND_SWITCH_CAM_ID);
+        commands.put( COMMAND_SWITCH_FLASH_NAME,COMMAND_SWITCH_FLASH_ID);
+        commands.put(COMMAND_MIC_ENABLE_NAME,COMMAND_MIC_ENABLE_ID);
+        commands.put(COMMAND_VIDEO_ENABLE_NAME,COMMAND_VIDEO_ENABLE_ID);
+        return commands;
+        /*MapBuilder.of(
                 COMMAND_STARTPREV_NAME,COMMAND_STARTPREV_ID,
                 COMMAND_STOPPREV_NAME,COMMAND_STOPPREV_ID,
                 COMMAND_START_NAME,COMMAND_START_ID,
                 COMMAND_STOP_NAME,COMMAND_STOP_ID,
                 COMMAND_SWITCH_CAM_NAME,COMMAND_SWITCH_CAM_ID,
                 COMMAND_SWITCH_FLASH_NAME,COMMAND_SWITCH_FLASH_ID,
+                COMMAND_VIDEO_ENABLE_NAME,COMMAND_VIDEO_ENABLE_ID,
                 COMMAND_MIC_ENABLE_NAME,COMMAND_MIC_ENABLE_ID
-        );
+        );*/
     }
 
     @Override
@@ -136,6 +150,9 @@ public class NodeCameraViewManager extends ViewGroupManager<RCTNodeCameraView> {
                 break;
             case COMMAND_MIC_ENABLE_ID:
                 root.micEnable(args.getBoolean(0));
+                break;
+            case COMMAND_VIDEO_ENABLE_ID:
+                root.videoEnable(args.getBoolean(0));
                 break;
             case COMMAND_SWITCH_FLASH_ID:
                 root.setFlashEnable(args.getBoolean(0));
