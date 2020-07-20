@@ -22,6 +22,7 @@
 
 @property (nonatomic) BOOL flashEnable;
 @property (nonatomic) BOOL micEnable;
+@property (nonatomic) BOOL videoEnable;
 
 -(int)startprev;
 -(int)stopprev;

@@ -105,6 +105,10 @@
   [_np setAudioEnable:micEnable];
 }
 
+- (void)setVideoEnable:(BOOL)videoEnable {
+  [_np setVideoEnable:videoEnable];
+}
+
 -(int)startprev {
   return [_np startPreview];
 }
